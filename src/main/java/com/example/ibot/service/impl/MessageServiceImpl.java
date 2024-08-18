@@ -47,7 +47,7 @@ public class MessageServiceImpl implements MessageService {
         outPutMessage.setSourceId(inputId);
         outPutMessage.setId(UUID.randomUUID().toString().replace("-", ""));
         messageRepository.save(outPutMessage);
-        return output;
+        return output.content().text();
     }
 
     @Override
